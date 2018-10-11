@@ -18,19 +18,19 @@ public class MyConfig {
         InetSocketTransportAddress node = new InetSocketTransportAddress(
                 InetAddress.getByName("localhost"),9300
         );
-        InetSocketTransportAddress node1 = new InetSocketTransportAddress(
-                InetAddress.getByName("localhost"),8200
-        );
-        InetSocketTransportAddress node2 = new InetSocketTransportAddress(
-                InetAddress.getByName("localhost"),8000
-        );
+//        InetSocketTransportAddress node1 = new InetSocketTransportAddress(
+//                InetAddress.getByName("localhost"),8200
+//        );
+//        InetSocketTransportAddress node2 = new InetSocketTransportAddress(
+//                InetAddress.getByName("localhost"),8000
+//        );
 
         Settings settings = Settings.builder().put("cluster.name","laver").build();
 
         TransportClient client = new PreBuiltTransportClient(settings);
         client.addTransportAddress(node);
-        client.addTransportAddress(node1);
-        client.addTransportAddress(node2);
+//        client.addTransportAddress(node1);
+//        client.addTransportAddress(node2);
 
         return client;
     }
